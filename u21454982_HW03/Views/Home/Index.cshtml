@@ -2,30 +2,101 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            
+        </div>
+        <div class="navbar-collapse collapse" id=".navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Images</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">About Me</a></li>
+
+            </ul>
+        </div>
+    </div>
 </div>
+
+
+    <h1>Home</h1>
+    <h4>This is my home page</h4>
+    
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h3>Description</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p> This is the home page for the media uploading system. A person selects the file/image/video they want to upload.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h3>Option Selection</h3>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Document @Html.RadioButton("Document", true)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Images @Html.RadioButton("Images", false)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Video @Html.RadioButton("Video", false)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><input type="Button" value="Choose File" /></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><input type="Submit" value="Submit" /></p>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            }
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
     </div>
-</div>
+    
