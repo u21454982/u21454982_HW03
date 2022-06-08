@@ -22,25 +22,27 @@
     </div>
     <div class="col-md-4">
         <h3>Option Selection</h3>
-        
+
+        @using (Html.BeginForm("Index", "Home",FormMethod.Post, new {enctype = "multipart/form-data" })) {
+
                 <table>
                     <tbody>
                         <tr>
                             <td>
                                 <label for="rbDocum">Document</label>
-                                <input type="radio" name="rbSelect" value="docum" />
+                                <input type="radio" name="rbSelection" value="docum" />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="rbImage">Images</label>
-                                <input type="radio" name="rbSelect" value="image" />
+                                <input type="radio" name="rbSelection" value="image" />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="rbVideo">Videos</label>
-                                <input type="radio" name="rbSelect" value="video" />
+                                <input type="radio" name="rbSelection" value="video" />
                             </td>
                         </tr>
                         <tr>
@@ -50,7 +52,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <p><input type="Button" value="Choose File" /></p>
+                                <p><input type="file" value="Choose File" name="files" /></p>
                             </td>
                         </tr>
                         <tr>
@@ -60,15 +62,15 @@
                         </tr>
                         <tr>
                             <td>
-                                <p><input type="Submit" value="Submit" /></p>
+                                <p><input type="submit" value="Submit" /></p>
                             </td>
                         </tr>
 
 
-
+                        
                     </tbody>
                 </table>
-            
+        }
 
 
     </div>

@@ -1,7 +1,34 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Images";
 }
+@using u21454982_HW03.Models 
 
-<h2>Index</h2>
+<h2>Images of any file type</h2>
+<h3>.... "App_Data/images/" folder</h3>
 
+
+<div class="well-lg" style="background-color: #262626; color: white;">
+    <div class=" row">
+        @foreach (FileModel images in Model)
+            {
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="~/App_Data/image/@images.FileName" alt="Card Image" />
+                        <div>
+                            <h4>images.FileName</h4>
+                            <button class="btn btn-success">
+                                @Html.ActionLink("Download", "DownloadImage",
+                               new {FileName = images.FileName})
+                            </button>
+                            <button class="btn btn-danger">
+                                @Html.ActionLink("Delete", "DeleteImage",
+                               new { FileName = images.FileName },
+                              new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+    </div>
+</div>

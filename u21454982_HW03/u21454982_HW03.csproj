@@ -172,7 +172,6 @@
   <ItemGroup>
     <Folder Include="App_Data\document\" />
     <Folder Include="App_Data\images\" />
-    <Folder Include="App_Data\nonselect\" />
     <Folder Include="App_Data\videos\" />
   </ItemGroup>
   <ItemGroup>

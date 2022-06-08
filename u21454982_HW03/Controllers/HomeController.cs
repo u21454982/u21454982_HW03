@@ -19,19 +19,7 @@ namespace u21454982_HW03.Controllers
             return View();
         }
 
-        public ActionResult Files()
-        {
-           
-            return View();
-        }
-        public ActionResult Images()
-        {
-            return View();
-        }
-        public ActionResult Videos()
-        {
-            return View();
-        }
+        
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase files, string rbSelection)
         {
@@ -39,9 +27,9 @@ namespace u21454982_HW03.Controllers
             if (files != null && files.ContentLength > 0)
             {
                 var filename = Path.GetFileName(files.FileName);
-                var path = Path.Combine(Server.MapPath("~/App_Data/nonselect"), filename);
+                var path = Path.Combine(Server.MapPath("~/App_Data/document"), filename);
 
-                if(rbSelection == "docum")
+                if (rbSelection == "docum")
                 {
                      path = Path.Combine(Server.MapPath("~/App_Data/document"), filename);
                 }
